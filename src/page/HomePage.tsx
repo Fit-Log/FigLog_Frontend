@@ -5,6 +5,43 @@ import Header from "../components/Header";
 import MyPage from "../components/MyPage";
 
 const HomePage = () => {
+  const menus = [
+    {
+      time: "아침",
+      menu1: "닭가슴살 3개",
+      menu2: "프로틴 쉐이크",
+      menu3: "고구마 반 개",
+      kcal: "230kcal",
+    },
+    {
+      time: "점심",
+      menu1: "닭가슴살 3개",
+      menu2: "프로틴 쉐이크",
+      menu3: "고구마 반 개",
+      kcal: "230kcal",
+    },
+    {
+      time: "저녁",
+      menu1: "닭가슴살 3개",
+      menu2: "프로틴 쉐이크",
+      menu3: "고구마 반 개",
+      kcal: "230kcal",
+    },
+  ];
+
+  const exercises = [
+    { exercise: "천국의 계단", plan: "1시간" },
+    { exercise: "벤치프레스", plan: "5세트" },
+    { exercise: "데드 리프트", plan: "1시간" },
+  ];
+
+  const member = [
+    { major: "Backend", name: "김가은", name2: "유하은" },
+    { major: "Frontend", name: "원은지" },
+    { major: "iOS", name: "조영준" },
+    { major: "Android", name: "양윤호" },
+    { major: "Design", name: "강해민" },
+  ];
   return (
     <Container>
       <Home>
@@ -29,45 +66,18 @@ const HomePage = () => {
             <WriteImg src={Write} alt="글쓰기 아이콘" />
           </MealWrapper>
           <MenuSort>
-            <MenuLine>
-              <MenuWrapper>
-                <Time>아침</Time>
-                <Menu>
-                  닭가슴살 3개
-                  <br />
-                  프로틴 쉐이크
-                  <br />
-                  고구마 반개
-                </Menu>
-                <Kcal>230kcal</Kcal>
-              </MenuWrapper>
-            </MenuLine>
-            <MenuLine>
-              <MenuWrapper>
-                <Time>점심</Time>
-                <Menu>
-                  닭가슴살 3개
-                  <br />
-                  프로틴 쉐이크
-                  <br />
-                  고구마 반개
-                </Menu>
-                <Kcal>230kcal</Kcal>
-              </MenuWrapper>
-            </MenuLine>
-            <MenuLine>
-              <MenuWrapper>
-                <Time>저녁</Time>
-                <Menu>
-                  닭가슴살 3개
-                  <br />
-                  프로틴 쉐이크
-                  <br />
-                  고구마 반개
-                </Menu>
-                <Kcal>230kcal</Kcal>
-              </MenuWrapper>
-            </MenuLine>
+            {menus.map((element) => (
+              <MenuLine key={element.time}>
+                <MenuWrapper>
+                  <Time>{element.time}</Time>
+                  <Menu>
+                    {element.menu1} <br /> {element.menu2} <br />
+                    {element.menu3}
+                  </Menu>
+                  <Kcal>{element.kcal}</Kcal>
+                </MenuWrapper>
+              </MenuLine>
+            ))}
           </MenuSort>
         </MealList>
         <Planning>
@@ -106,18 +116,12 @@ const HomePage = () => {
                 <WriteImg src={Write} alt="글쓰기 아이콘" />
               </TodayExercise>
               <ExerciseSort>
-                <ExerciseWrapper>
-                  <Exercise>천국의 계단</Exercise>
-                  <Todayplan>1시간</Todayplan>
-                </ExerciseWrapper>
-                <ExerciseWrapper>
-                  <Exercise>벤치프레스</Exercise>
-                  <Todayplan>5세트</Todayplan>
-                </ExerciseWrapper>
-                <ExerciseWrapper>
-                  <Exercise>데드 리프트</Exercise>
-                  <Todayplan>1시간</Todayplan>
-                </ExerciseWrapper>
+                {exercises.map((element) => (
+                  <ExerciseWrapper key={element.exercise}>
+                    <Exercise>{element.exercise}</Exercise>
+                    <Todayplan>{element.plan}</Todayplan>
+                  </ExerciseWrapper>
+                ))}
               </ExerciseSort>
             </TodayWrapper>
           </ExerciseBack>
@@ -138,27 +142,13 @@ const HomePage = () => {
         <Footer>
           <LogoSort>
             <IntroduceWrapper>
-              <Introduce>
-                <Major>Backend</Major>
-                <Name>김가은</Name>
-                <Name>유하은</Name>
-              </Introduce>
-              <Introduce>
-                <Major>Frontend</Major>
-                <Name>원은지</Name>
-              </Introduce>
-              <Introduce>
-                <Major>iOS</Major>
-                <Name>조영준</Name>
-              </Introduce>
-              <Introduce>
-                <Major>Android</Major>
-                <Name>양윤호</Name>
-              </Introduce>
-              <Introduce>
-                <Major>Design</Major>
-                <Name>강해민</Name>
-              </Introduce>
+              {member.map((element) => (
+                <Introduce>
+                  <Major>{element.major}</Major>
+                  <Name>{element.name}</Name>
+                  <Name>{element.name2}</Name>
+                </Introduce>
+              ))}
             </IntroduceWrapper>
             <LogoImg src={Logo} alt="로고" />
           </LogoSort>
