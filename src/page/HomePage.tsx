@@ -3,6 +3,7 @@ import { Logo, Song, Write, Flag } from "../assets";
 import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 import Header from "../components/Header";
 import MyPage from "../components/MyPage";
+import AddMenu from "../components/AddMenu";
 
 const HomePage = () => {
   const menus = [
@@ -136,7 +137,7 @@ const HomePage = () => {
               <GoalText>매일 나만의 목표를 설정하고 지켜보세요!</GoalText>
               <WriteImg src={Write} />
             </WriteWrapper>
-            <GoalInput></GoalInput>
+            <GoalInput placeholder="목표 설정..."></GoalInput>
           </GoalSort>
         </GoalWrapper>
         <Footer>
@@ -169,6 +170,7 @@ const HomePage = () => {
         </ClickButton>
       </Alert>
       <MyPage />
+      <AddMenu />
     </Container>
   );
 };
@@ -407,7 +409,7 @@ const GoalInput = styled.input`
   width: 1500px;
   height: 100px;
   font-size: 24px;
-  color: ${({ theme }) => theme.colors.gray300};
+  color: ${({ theme }) => theme.colors.gray800};
   padding: 32px 1145px 32px 42px;
   border-radius: 24px;
   border: 2px solid;
