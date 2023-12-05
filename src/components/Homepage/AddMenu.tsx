@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Close, Write, Plus } from "../assets";
+import { Close, Write, Plus } from "../../assets";
 import GrayInput from "./GrayInput";
 import Menu from "./Menu";
 

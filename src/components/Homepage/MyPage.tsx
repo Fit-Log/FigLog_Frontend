@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Close } from "../assets";
+import { Close } from "../../assets";
 
 const MyPage = () => {
   const arr = [

@@ -1,23 +1,24 @@
 import styled from "styled-components";
-import { Close } from "../assets";
+import { Close } from "../../assets";
 
-const Menu = () => {
+const Exercise = () => {
   return (
     <Back>
-      <Text>닭가슴살</Text>
-      <Text>230kcal</Text>
+      <Text>벤치프레스</Text>
+      <Text>00 : 30 : 20</Text>
       <CloseImg src={Close} />
     </Back>
   );
 };
 
 const Back = styled.div`
-  width: 330px;
+  width: 320px;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 10px;
+  padding: 10px 16px;
   border-radius: 8px;
   background-color: ${({ theme }) => theme.colors.main100};
 `;
@@ -33,4 +34,4 @@ const CloseImg = styled.img`
   height: 20px;
 `;
 
-export default Menu;
+export default Exercise;
